@@ -48,7 +48,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         holder.eventVenue.setText(schedule.getEventVenue());
         holder.eventTime.setText(schedule.getEventTime());
         if (schedule.getClusterIcon() != 0)
-            holder.clusterIcon.setImageResource(schedule.getClusterIcon());
+            holder.clusterIcon.setBackgroundColor(schedule.getClusterIcon());
     }
 
     @Override
