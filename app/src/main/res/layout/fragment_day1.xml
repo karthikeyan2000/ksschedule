@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/d1button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b"
+                android:text="Tamil Lits"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/d1button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="123dp"
+                android:layout_marginLeft="123dp"
+                android:layout_marginEnd="119dp"
+                android:layout_marginRight="119dp"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b2"
+                android:text="Telugu Lits"
+                android:textColor="#fff"
+                app:layout_constraintEnd_toEndOf="@+id/d1button3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/d1button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="242dp"
+                android:layout_marginLeft="242dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginRight="250dp"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b3"
+                android:text="English Lits"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button2"
+                app:layout_constraintEnd_toEndOf="@+id/d1button5"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/d1button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="126dp"
+                android:layout_marginLeft="126dp"
+                android:layout_marginEnd="124dp"
+                android:layout_marginRight="124dp"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b4"
+                android:text="Hindi Lits"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button3"
+                app:layout_constraintEnd_toEndOf="@+id/d1button5"
+                app:layout_constraintStart_toStartOf="@+id/d1button3" />
+
+            <Button
+                android:id="@+id/d1button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="446dp"
+                android:layout_marginRight="446dp"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b5"
+                android:text="Arts"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button4"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/d1button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="107dp"
+                android:layout_marginLeft="107dp"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b6"
+                android:text="Studio"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button5"
+                app:layout_constraintStart_toStartOf="@+id/d1button5" />
+
+            <Button
+                android:id="@+id/d1button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="223dp"
+                android:layout_marginLeft="223dp"
+                android:layout_marginEnd="223dp"
+                android:layout_marginRight="223dp"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b7"
+                android:text="Music"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/d1button5" />
+
+            <Button
+                android:id="@+id/d1button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="114dp"
+                android:layout_marginLeft="114dp"
+                android:layout_marginEnd="109dp"
+                android:layout_marginRight="109dp"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b8"
+                android:text="Dance"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/d1button7" />
+
+            <Button
+                android:id="@+id/d1button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/capsule_normal"
+                android:onClick="d1b9"
+                android:text="OAT"
+                android:textColor="#fff"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d1button8"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </HorizontalScrollView>
+
+
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/d1RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
+
