@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public void noNetworkConnection() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Please check your network state!");
+        builder.setIcon(R.drawable.noInternetIcon);
         builder.setMessage("Please trun on internet connection to continuse!");
         builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
             @Override
@@ -58,5 +59,12 @@ public class MainActivity extends AppCompatActivity {
             noNetworkConnection();
             return false;
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!isNetworkConnectionAvailable())
+            noNetworkConnection();
     }
 }
