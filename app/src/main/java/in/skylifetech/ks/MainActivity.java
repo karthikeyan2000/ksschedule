@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Please check your network state!");
         builder.setIcon(R.drawable.noInternetIcon);
-        builder.setMessage("Please trun on internet connection to continuse!");
+        builder.setMessage("Please trun on internet connection to continue!");
         builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
