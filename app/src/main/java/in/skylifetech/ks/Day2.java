@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -23,6 +24,7 @@ public class Day2 extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
     View view;
+    ProgressBar progressBar;
 
     public Day2() {
         // Required empty public constructor
@@ -37,6 +39,8 @@ public class Day2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_day2, container, false);
+
+        progressBar = view.findViewById(R.id.d2progressbar);
 
         b();
 
@@ -125,6 +129,7 @@ public class Day2 extends Fragment {
     }
 
     public void b() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -174,9 +179,11 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b2() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -226,9 +233,11 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b3() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -278,9 +287,11 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b4() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -330,6 +341,7 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b5() {
@@ -382,9 +394,11 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b6() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -434,9 +448,11 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b7() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -486,9 +502,11 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b8() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -538,9 +556,11 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void b9() {
+        progressBar.setVisibility(View.VISIBLE);
         Button d2button = view.findViewById(R.id.d2button);
         Button d2button2 = view.findViewById(R.id.d2button2);
         Button d2button3 = view.findViewById(R.id.d2button3);
@@ -590,5 +610,6 @@ public class Day2 extends Fragment {
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 }
