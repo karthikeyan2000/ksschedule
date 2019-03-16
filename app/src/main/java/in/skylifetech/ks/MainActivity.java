@@ -11,13 +11,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
-
-    RecyclerView.Adapter recyclerViewAdapter;
-    RecyclerView.LayoutManager layoutManager;
-    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
             ViewPager viewPager = findViewById(R.id.viewpager);
             viewPager.setAdapter(adapter);
             tabLayout.setupWithViewPager(viewPager);
-        }
+        } else
+            noNetworkConnection();
     }
 
     public void noNetworkConnection() {
@@ -53,12 +49,7 @@ public class MainActivity extends AppCompatActivity {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         boolean isConnected = activeNetwork != null && activeNetwork.isConnected();
-        if (isConnected) {
-            return true;
-        } else {
-            noNetworkConnection();
-            return false;
-        }
+        return isConnected;
     }
 
     @Override
