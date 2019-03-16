@@ -13,7 +13,7 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        card_view:cardCornerRadius="10dp"
+        card_view:cardCornerRadius="4dp"
         card_view:cardElevation="8dp">
 
         <RelativeLayout
