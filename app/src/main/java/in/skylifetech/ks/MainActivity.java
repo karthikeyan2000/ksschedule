@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void noNetworkConnection() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Please check your network state!");
-        builder.setIcon(R.drawable.noInternetIcon);
+        builder.setIcon(R.drawable.no_internet_icon);
         builder.setMessage("Please trun on internet connection to continue!");
         builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
             @Override
@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean isNetworkConnectionAvailable() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null && activeNetwork.isConnected();
-        return isConnected;
+        return activeNetwork != null && activeNetwork.isConnected();
     }
 
     @Override
