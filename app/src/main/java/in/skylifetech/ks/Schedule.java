@@ -1,6 +1,6 @@
 package in.skylifetech.ks;
 
-public class Schedule {
+public class Schedule {     //Modal class for ScheduleAdapter.
     String eventName, eventVenue, eventTime;
 
     Schedule(String name, String venue, String time) {
@@ -19,17 +19,5 @@ public class Schedule {
 
     public String getEventVenue() {
         return eventVenue;
-    }
-
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
-    }
-
-    public void setEventTime(String eventTime) {
-        this.eventTime = eventTime;
-    }
-
-    public void setEventVenue(String eventVenue) {
-        this.eventVenue = eventVenue;
     }
 }

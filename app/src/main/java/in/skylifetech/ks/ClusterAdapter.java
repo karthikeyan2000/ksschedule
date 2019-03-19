@@ -19,7 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class ClusterAdapter extends RecyclerView.Adapter<ClusterAdapter.ClusterHolder> implements CallbackInterface {
-
+    //Cluster Adapter for Cluster RecyclerView.
     ArrayList<String> clusterNames = new ArrayList<>();
     ArrayList<Drawable> clusterIcon = new ArrayList<>();
     Context mContext;
@@ -27,12 +27,12 @@ public class ClusterAdapter extends RecyclerView.Adapter<ClusterAdapter.ClusterH
     int day;
     private ClusterAdapter callback;
 
-    public ClusterAdapter(Context mContext, int d) {
+    public ClusterAdapter(Context mContext, int d) {        //Constructor initializes mContext, callback and data for clusters as it is Static.
         this.mContext = mContext;
         this.callback = this;
         day = d;
 
-        progressDialog = new ProgressDialog(mContext);
+        progressDialog = new ProgressDialog(mContext);      //Initializes progress Dialog When loading for data.
         progressDialog.setTitle("Loading...");
         progressDialog.setMessage("Downloading Data.....Please Wait");
         progressDialog.setCancelable(false);
@@ -90,11 +90,11 @@ public class ClusterAdapter extends RecyclerView.Adapter<ClusterAdapter.ClusterH
 
     @Override
     public void onViewDetachedFromWindow(@NonNull ClusterHolder holder) {
-        super.onViewDetachedFromWindow(holder);
+        super.onViewDetachedFromWindow(holder);     //Hides the Schedule if the item is detached.
         holder.hideRecyclerView();
     }
 
-    private String getQueryWord(String gameName) {
+    private String getQueryWord(String gameName) {      //Returns the query word.
         if (gameName.equals("TAMIL LITS")) {
             return "TAMIL LITS";
         } else if (gameName.equals("TELUGU LITS")) {
@@ -122,20 +122,20 @@ public class ClusterAdapter extends RecyclerView.Adapter<ClusterAdapter.ClusterH
     @Override
     public int getItemCount() {
         return clusterIcon.size();
+    }       //Gets the total number of items.
+
+    @Override
+    public void callback(String querySchedule) {
+
     }
 
     @Override
-    public void callback(String queryGame) {
-
-    }
-
-    @Override
-    public void setScheduleData(ArrayList<Schedule> data, ClusterHolder clusterHolder, boolean isEmpty) {
+    public void setScheduleData(ArrayList<Schedule> data, ClusterHolder clusterHolder, boolean isEmpty) {   //To set Schedule data
         if (isEmpty) {
-            progressDialog.cancel();
+            progressDialog.dismiss();
             Toast.makeText(mContext, "Sorry! Unfortunate Error occurred.", Toast.LENGTH_SHORT).show();
         } else {
-            clusterHolder.setRecyclerView(data);
+            clusterHolder.setRecyclerView(data);        //To set recycler view for schedule.
         }
     }
 
@@ -146,7 +146,7 @@ public class ClusterAdapter extends RecyclerView.Adapter<ClusterAdapter.ClusterH
         RecyclerView scheduleRecyclerView;
         ScheduleAdapter adapter;
 
-        public ClusterHolder(@NonNull View itemView) {
+        public ClusterHolder(@NonNull View itemView) {      //Holder for cluster item which holds the current recycler view in use.
             super(itemView);
             rootLayout = itemView.findViewById(R.id.root_layout);
             clusterName = itemView.findViewById(R.id.clusterName);
@@ -157,13 +157,13 @@ public class ClusterAdapter extends RecyclerView.Adapter<ClusterAdapter.ClusterH
             scheduleRecyclerView.setAdapter(adapter);
         }
 
-        public void setRecyclerView(ArrayList<Schedule> data) {
+        public void setRecyclerView(ArrayList<Schedule> data) {     //Sets the data, make the schedules visible and dismisses the AlertDialog.
             scheduleRecyclerView.setVisibility(View.VISIBLE);
             adapter.setData(data);
-            progressDialog.cancel();
+            progressDialog.dismiss();
         }
 
-        public void hideRecyclerView() {
+        public void hideRecyclerView() {        //Hides the recyclerView.
             scheduleRecyclerView.setVisibility(View.GONE);
         }
 

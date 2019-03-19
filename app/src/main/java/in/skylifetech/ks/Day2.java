@@ -1,6 +1,5 @@
 package in.skylifetech.ks;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,9 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -21,8 +17,9 @@ public class Day2 extends Fragment {
     public ArrayList<Schedule> scheduleArrayList = new ArrayList<>();
     private RecyclerView clusterRecyclerView;
     private ClusterAdapter clusterAdapter;
+    private View view;
 
-    public static Day2 getInstance() {
+    public static Day2 getInstance() {  //Gets the instance of this fragment.
         if (instance == null) {
             instance = new Day2();
         }
@@ -41,9 +38,9 @@ public class Day2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_day2, container, false);
+        view = inflater.inflate(R.layout.fragment_day2, container, false);
 
-        clusterRecyclerView = view.findViewById(R.id.d2ClusterRecyclerView);
+        clusterRecyclerView = view.findViewById(R.id.d1ClusterRecyclerView);        //Creates the rrecycler view and displays the clusters
         clusterAdapter = new ClusterAdapter(getActivity(), 2);
         clusterRecyclerView.setAdapter(clusterAdapter);
         clusterRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -52,33 +49,20 @@ public class Day2 extends Fragment {
     }
 
     public void getSchedule(String query, final CallbackInterface callbackInterface, final ClusterAdapter.ClusterHolder clusterHolder) {
+        //Schedule data is set here.
 
-        EndPoint endPoint = new EndPoint(getActivity());
-        endPoint.getData(2, query, new ServerCallback() {
-            @Override
-            public void onSuccess(JSONArray jsonArray, Context context) {
-                String eventName = "", eventVenue = "Venue: ", eventTime = "";
-                Schedule schedule;
-                scheduleArrayList.clear();
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    try {
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        eventName = jsonObject.getString("ename");
-                        eventVenue += jsonObject.getString("venue");
-                        eventTime = jsonObject.getString("fromTime");
-                        eventTime += " - ";
-                        eventTime += jsonObject.getString("toTime");
-                    } catch (Exception e) {
-                        //Log.d("in.skylifetech.ks.json", e.getMessage());
-                    }
-                    schedule = new Schedule(eventName, eventVenue, eventTime);
-                    scheduleArrayList.add(schedule);
-                }
-                if (scheduleArrayList.size() > 0)
-                    callbackInterface.setScheduleData(scheduleArrayList, clusterHolder, false);
-                else
-                    callbackInterface.setScheduleData(null, null, true);
-            }
-        });
+        //TODO: Implement API here.
+
+        //API is to be called here.
+        //API returns JSONArray.
+        //Parse it here and return it in scheduleArrayList.
+        //It is to be queried with the 'query', which has the query word, and day.
+        //Name, venue in the format: "Venue: ________" and time in the format: "08.30 AM - 12.30 PM" is the data that is required.
+
+        scheduleArrayList.clear();      //Clears the previous data.
+        scheduleArrayList.add(new Schedule("THAMIZATTAM", "Venue: JVC CR 1", "08.30 AM - 11.00"));  //Fake placeholder datas.
+        scheduleArrayList.add(new Schedule("DRAMA", "JVC CR 2", "08.30 AM - 11.00"));
+        scheduleArrayList.add(new Schedule("SHERLOCK", "VKJ CR 1", "08.30 AM - 11.00"));
+        callbackInterface.setScheduleData(scheduleArrayList, clusterHolder, false);     //Callback interface to set schedule data.
     }
 }

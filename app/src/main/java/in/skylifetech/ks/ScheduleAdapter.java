@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder> {
+public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder> {     //ScheduleAdapter for scheduleRecyclerView
     ArrayList<Schedule> schedules = new ArrayList<>();
     Context mContext;
 
-    public ScheduleAdapter(Context mContext) {
+    public ScheduleAdapter(Context mContext) {      //Constructor initializes mContext.
         this.mContext = mContext;
     }
 
@@ -26,36 +26,23 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     @Override
     public void onBindViewHolder(final ScheduleViewHolder holder, final int listPosition) {
         Schedule schedule = schedules.get(listPosition);
-        holder.setDetails(schedule);
+        holder.setDetails(schedule);    //To set details of each individual item.
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount() {     //Returns count of total items.
         if (schedules != null)
             return schedules.size();
         else
             return 0;
     }
 
-    public void setSchedule(ArrayList<Schedule> scheduleArrayList) {
-        this.schedules = scheduleArrayList;
-    }
 
-    public void addSchedule(Schedule schedule) {
-        if (schedules != null)
-            schedules.add(schedule);
-    }
-
-    public void setData(ArrayList<Schedule> data) {
+    public void setData(ArrayList<Schedule> data) {     //Sets data of schedule and notifies the data change.
         this.schedules = data;
         notifyDataSetChanged();
     }
 
-    public int numberOfSchedule() {
-        if (schedules != null)
-            return schedules.size() - 1;
-        else return 0;
-    }
 
     public static class ScheduleViewHolder extends RecyclerView.ViewHolder {
         TextView eventName;
