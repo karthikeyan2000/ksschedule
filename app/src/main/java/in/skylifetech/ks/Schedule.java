@@ -1,14 +1,12 @@
 package in.skylifetech.ks;
 
 public class Schedule {
-    int clusterIcon;
     String eventName, eventVenue, eventTime;
 
-    Schedule(String name, String venue, String time, int icon) {
+    Schedule(String name, String venue, String time) {
         eventName = name;
         eventVenue = venue;
         eventTime = time;
-        clusterIcon = icon;
     }
 
     public String getEventName() {
@@ -23,7 +21,15 @@ public class Schedule {
         return eventVenue;
     }
 
-    public int getClusterIcon() {
-        return clusterIcon;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public void setEventTime(String eventTime) {
+        this.eventTime = eventTime;
+    }
+
+    public void setEventVenue(String eventVenue) {
+        this.eventVenue = eventVenue;
     }
 }
